@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
-
+SITE_ID = 1
 
 # Application definition
 
@@ -62,7 +62,7 @@ AUTHENTICATION_BACKENDS = (
 
 ANONYMOUS_USER_ID = -1
 
-#I know if deprecated but it works
+#I know if deprecated but still works
 AUTH_PROFILE_MODULE = 'accounts.Profile'
 
 USERENA_ACTIVATION_REQUIRED = False
@@ -106,5 +106,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-
-#Heroku requirement
