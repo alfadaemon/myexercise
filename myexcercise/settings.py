@@ -23,6 +23,7 @@ SECRET_KEY = 'bfcq4^-3uz_=*#dn&pbk1wnv3vgz9m&^8px@z6sjx!+jwyma7r'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
 
@@ -36,8 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'guardian',
+    'userena',
+    'easy_thumbnails',
+    'bootstrap3',
     'exercises',
-    'accounts'
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,8 +62,13 @@ AUTHENTICATION_BACKENDS = (
 
 ANONYMOUS_USER_ID = -1
 
+#I know if deprecated but it works
 AUTH_PROFILE_MODULE = 'accounts.Profile'
 
+USERENA_ACTIVATION_REQUIRED = False
+USERENA_ACTIVATION_NOTIFY = False
+USERENA_DISABLE_PROFILE_LIST = True
+USERENA_MUGSHOT_SIZE = 64
 LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
 LOGIN_URL = '/accounts/signin/'
 LOGOUT_URL = '/accounts/signout/'

@@ -15,6 +15,6 @@ class Profile(UserenaBaseProfile):
         (FEMALE, 'Female'),
     )
     gender = models.CharField(_('gender'), max_length=1, choices=GENDER_CHOICES, default=MALE)
-    birth_date = models.DateField(_('Date Of Birth'))
-    weight = models.DecimalField(_('Weight in Kg'), max_digits=5, decimal_places=2)
-    height = models.DecimalField(_('Height in cms'), max_digits=5, decimal_places=2)
+    birth_date = models.DateField(_('Date Of Birth'), blank=True, null=True)
+    weight = models.DecimalField(_('Weight in Kg'), max_digits=5, decimal_places=2, default=0)
+    height = models.DecimalField(_('Height in cms'), max_digits=5, decimal_places=2, default=0)
