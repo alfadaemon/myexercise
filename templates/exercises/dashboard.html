@@ -1,0 +1,30 @@
+{% extends 'userena/base_userena.html' %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title %}{% trans "Your workout" %}{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+        <td>Date</td>
+        <td>Start</td>
+        <td>End</td>
+        <td>Heart Rate</td>
+        <td>Calories (kcals/min)</td>
+    </thead>
+    {% for workout in workouts %}
+        <tr>
+            <td>{{ workout.date }}</td>
+            <td>{{ workout.starts }}</td>
+            <td>{{ workout.ends }}</td>
+            <td>{{ workout.heart_rate }}</td>
+            <td>{{ workout.burned_calories|floatformat:2|intcomma }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+</div>
+</div>
+{% endblock %}

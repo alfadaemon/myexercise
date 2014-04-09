@@ -34,14 +34,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">My Exercise</a>
+              <a class="navbar-brand" href="/">My Exercise</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
               {% if user.is_authenticated %}
+                <li class="active"><a href="/exercises/">Dashboard</a></li>
+                <li class="active"><a href="/exercises/workout">Workout</a></li>
                 <li class="active"><a href="/accounts/signout">Logout</a></li>
               {% else %}
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/accounts/signin">Sign In</a></li>
                 <li><a href="/accounts/signup">Sign Up</a></li>
               {%  endif %}
@@ -55,7 +57,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-8 col-sm-offset-2  main">
           <div id="body">
             {% block body %}
               <div class="content_title">

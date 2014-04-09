@@ -4,6 +4,8 @@
 {% block title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+<div class="row">
+<div class="col-sm-7 col-sm-offset-1">
 <form action="" method="post">
   {% csrf_token %}
   <fieldset>
@@ -26,4 +28,6 @@
   </fieldset>
   <input type="submit" value="{% trans "Signup"%}" />
 </form>
+</div>
+</div>
 {% endblock %}
